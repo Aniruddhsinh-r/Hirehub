@@ -26,7 +26,7 @@ The application provides a complete solution for job searching, application trac
 * React.js
 * React Router
 * Axios
-* CSS / Bootstrap
+* CSS / tailwind css
 
 ### Backend
 
