@@ -123,7 +123,7 @@ npm run dev
 After running both servers, open your browser and go to:
 
 ```
-[http://localhost:5173](http://localhost:5173/)
+http://localhost:5173
 ```
 
 ---
