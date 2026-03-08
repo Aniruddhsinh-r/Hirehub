@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <footer class="bg-[#b1d8b7] text-gray-800 mt-10 shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            
+            <div class="text-center md:text-left">
+                <h2 class="text-lg font-semibold text-green-900">Admin Dashboard</h2>
+                <p class="text-sm text-gray-700">Manage products, users & orders efficiently</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-medium">
+                <a href="dashboard.php" class="hover:text-green-900 transition">Dashboard</a>
+                <a href="sellproduct.php" class="hover:text-green-900 transition">Products</a>
+                <a href="users.php" class="hover:text-green-900 transition">Users</a>
+                <a href="" class="hover:text-green-900 transition">Orders</a>
+                <a href="../index.php" target="_blank" class="hover:text-green-900 transition">View Site</a>
+            </div>
+        </div>
+
+        <div class="border-t border-green-200 my-4"></div>
+
+        <div class="flex flex-col md:flex-row items-center justify-between text-center text-sm text-gray-700">
+            <p>&copy; <?php echo date('Y'); ?> <span class="font-semibold">OrganicMart Admin</span>. All rights reserved.</p>
+            <p>Developed by <span class="text-green-900 font-semibold">Aniruddhsinh</span></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<div className="min-h-screen bg-gray-50 p-4 md:p-8 flex justify-center items-start">
+      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        
+        {/* Header */}
+        <div className="p-6 border-b border-gray-50 bg-white">
+          <h2 className="text-2xl font-bold text-gray-800">Company Profile</h2>
+          <p className="text-gray-500 text-sm mt-1">Set up your company's public identity and presence.</p>
+        </div>
+
+        <form className="p-6 md:p-10 space-y-8">
+          
+          {/* Logo Upload Section */}
+          <div className="flex flex-col md:flex-row items-center gap-6 pb-8 border-b border-gray-50">
+            <div className="relative group">
+              <div className="w-24 h-24 rounded-2xl bg-indigo-50 flex items-center justify-center border-2 border-dashed border-indigo-200 overflow-hidden">
+                {logoPreview ? (
+                  <img src={logoPreview} alt="Preview" className="w-full h-full object-cover" />
+                ) : (
+                  <Camera className="w-8 h-8 text-indigo-400" />
+                )}
+              </div>
+              <input 
+                type="file" 
+                onChange={handleLogoChange}
+                className="absolute inset-0 opacity-0 cursor-pointer" 
+                accept="image/*"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h4 className="font-medium text-gray-700">Company Logo</h4>
+              <p className="text-xs text-gray-400 mt-1">PNG, JPG or GIF. Max 2MB.</p>
+              <button type="button" className="mt-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700">
+                Upload New Image
+              </button>
+            </div>
+          </div>
+
+          {/* Form Fields Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Company Name */}
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                <Building2 size={16} /> Company Name
+              </label>
+              <input 
+                type="text" 
+                placeholder="e.g. Acme Corp"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 outline-none transition-all"
+              />
+            </div>
+
+            {/* Website */}
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                <Globe size={16} /> Website URL
+              </label>
+              <input 
+                type="url" 
+                placeholder="https://example.com"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 outline-none transition-all"
+              />
+            </div>
+
+            {/* Location */}
+            <div className="md:col-span-2 space-y-2">
+              <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                <MapPin size={16} /> Business Location
+              </label>
+              <input 
+                type="text" 
+                placeholder="San Francisco, CA (or Remote)"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 outline-none transition-all"
+              />
+            </div>
+
+            {/* Description */}
+            <div className="md:col-span-2 space-y-2">
+              <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                <AlignLeft size={16} /> Company Description
+              </label>
+              <textarea 
+                rows="4"
+                placeholder="Tell us a bit about your company goals..."
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 outline-none transition-all resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <button 
+              type="submit" 
+              className="px-8 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-100 transition-all active:scale-95"
+            >
+              Save Changes
+            </button>
+            <button 
+              type="button" 
+              className="px-8 py-3 bg-white text-gray-600 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all"
+            >
+              Cancel
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+
+<!-- import React, { useState } from 'react';
+
+const Signin = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-200">
+      <style>{`
+        /* 1. Main Container Slide Logic */
+        #container.active .toggle-container { transform: translateX(-100%); border-radius: 0 100px 100px 0; }
+        #container.active .toggle { transform: translateX(50%); }
+        #container.active .toggle-left { transform: translateX(0); }
+        #container.active .toggle-right { transform: translateX(200%); }
+
+        /* 2. Fix the Overlapping Forms */
+        .form-panel {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          transition: all 0.6s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 40px;
+          background-color: white;
+        }
+
+        /* Initial State: Sign In is visible, Log In is hidden */
+        .sign-in-panel { z-index: 2; opacity: 1; visibility: visible; }
+        .log-in-panel { z-index: 1; opacity: 0; visibility: hidden; }
+
+        /* Active State (After Slide): Log In is visible, Sign In is hidden */
+        #container.active .sign-in-panel { 
+            transform: translateX(100%); 
+            opacity: 0; 
+            visibility: hidden; 
+        }
+        #container.active .log-in-panel { 
+            transform: translateX(100%); 
+            opacity: 1; 
+            visibility: visible; 
+            z-index: 5;
+            animation: move 0.6s; 
+        }
+
+        /* 3. Overlay Styling */
+        .toggle-container {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 50%;
+          height: 100%;
+          overflow: hidden;
+          transition: all 0.6s ease-in-out;
+          z-index: 100;
+          border-radius: 100px 0 0 100px;
+        }
+
+        .toggle {
+          background: linear-gradient(to right, #5c6bc0, #2da0a8);
+          color: #FFFFFF;
+          position: relative;
+          left: -100%;
+          height: 100%;
+          width: 200%;
+          transform: translateX(0);
+          transition: all 0.6s ease-in-out;
+        }
+
+        .toggle-panel {
+          position: absolute;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 0 30px;
+          text-align: center;
+          top: 0;
+          transition: all 0.6s ease-in-out;
+        }
+
+        .toggle-left { transform: translateX(-200%); }
+        .toggle-right { transform: translateX(0); right: 0; }
+
+        .inputfield {
+          background-color: #eee;
+          border: 1px solid #ccc;
+          padding: 10px 15px;
+          font-size: 13px;
+          border-radius: 8px;
+          width: 100%;
+          margin-bottom: 12px;
+          outline: none;
+        }
+
+        @keyframes move {
+          0%, 49.99% { opacity: 0; z-index: 1; }
+          50%, 100% { opacity: 1; z-index: 5; }
+        }
+      `}</style>
+
+      <div id="container" className={`relative overflow-hidden w-[900px] h-[500px] bg-white rounded-[30px] shadow-2xl flex ${isActive ? 'active' : ''}`}>
+        
+        {/* LOG IN FORM (Hidden initially) */}
+        <div className="form-panel log-in-panel">
+            <h1 className="text-3xl font-bold text-center mb-6">Log In</h1>
+            <label className="text-sm font-bold mb-1">User name</label>
+            <input type="text" className="inputfield" placeholder="Enter User Name" />
+            <label className="text-sm font-bold mb-1">Your password</label>
+            <input type="password" className="inputfield" placeholder="••••••••" />
+            <button className="bg-indigo-600 text-white py-2 rounded-lg mt-2 font-bold hover:bg-indigo-700 transition">Log In</button>
+        </div>
+
+        {/* SIGN IN FORM (Visible initially) */}
+        <div className="form-panel sign-in-panel">
+            <h1 className="text-3xl font-bold text-center mb-6">Sign In</h1>
+            <label className="text-sm font-bold mb-1">User name</label>
+            <input type="text" className="inputfield" placeholder="User Name" />
+            <label className="text-sm font-bold mb-1">Your email</label>
+            <input type="text" className="inputfield" placeholder="name@xyz.com" />
+            <label className="text-sm font-bold mb-1">Your password</label>
+            <input type="password" className="inputfield" placeholder="••••••••" />
+            <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-lg mt-2 font-bold uppercase">Sign In</button>
+        </div>
+
+        {/* SLIDING OVERLAY */}
+        <div className="toggle-container">
+          <div className="toggle">
+            <div className="toggle-panel toggle-left">
+              <h1 className="text-2xl font-bold mb-4">Welcome Back!</h1>
+              <p className="mb-8 text-sm">Enter your personal details to use all of site features</p>
+              <button onClick={() => setIsActive(false)} className="border-2 border-white px-12 py-2 rounded-lg font-bold uppercase cursor-pointer hover:bg-white hover:text-indigo-600 transition">Sign In</button>
+            </div>
+            <div className="toggle-panel toggle-right">
+              <h1 className="text-2xl font-bold mb-4">Hello, Friend!</h1>
+              <p className="mb-8 text-sm">Register with your personal details to use all of site features</p>
+              <button onClick={() => setIsActive(true)} className="border-2 border-white px-12 py-2 rounded-lg font-bold uppercase cursor-pointer hover:bg-white hover:text-indigo-600 transition">Log In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Signin; -->
