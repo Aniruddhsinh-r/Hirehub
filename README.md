@@ -75,91 +75,56 @@ Make sure the following tools are installed on your system:
 git clone https://github.com/your-username/HireHub.git
 ```
 
-### 2. Navigate to the Project Directory
+### 2. Install Dependencies
 
 ```bash
 cd HireHub
-```
-
-### 3. Install Backend Dependencies
-
-```bash
 cd backend
 npm install
-```
-
-### 4. Install Frontend Dependencies
-
-```bash
+cd..
 cd ../frontend
 npm install
 ```
 
 ---
 
-## Environment Variables
+## 3. Environment Variables
 
 Create a `.env` file inside the **backend folder** and add the following variables:
 
 ```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-CLIENT_URL=http://localhost:3000
+PORT=8000
+MONGO_URI=mongodb://localhost:27017/hirehub
+JWT_SECRET=hirehub_secret_key
+CLOUD_NAME=your_cloudinary_name
+API_KEY=your_cloudinary_api_key
+API_SECRET=your_cloudinary_api_secret
+EMAIL_USER=your_email_address
+EMAIL_PASS=your_email_password  (2 step verification)
 ```
 
-Replace the values with your actual configuration.
 
----
-
-## Run the Application
+## 4. Run the Application
 
 ### Start Backend Server
 
 ```bash
 cd backend
-npm start
+npm run dev
 ```
 
 ### Start Frontend
 
 ```bash
 cd frontend
-npm start
+npm run dev
 ```
 
 After running both servers, open your browser and go to:
 
 ```
-http://localhost:3000
+[http://localhost:5173](http://localhost:5173/)
 ```
-
----
-
-## Contributing
-
-Contributions are welcome and appreciated.
-
-1. Fork the repository
-2. Create your feature branch
-
-```bash
-git checkout -b feature/AmazingFeature
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add Amazing Feature"
-```
-
-4. Push to the branch
-
-```bash
-git push origin feature/AmazingFeature
-```
-
-5. Open a Pull Request
 
 ---
 
