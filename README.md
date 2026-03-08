@@ -138,7 +138,7 @@ If you like this project, please consider giving it a **star ⭐ on GitHub**.
 
 Developer: **Rathod Aniruddhsinh**
 
-GitHub: [https://github.com/your-username](https://github.com/Aniruddhsinh-r)
+GitHub: [https://github.com/Aniruddhsinh](https://github.com/Aniruddhsinh-r)
 
 Project Repository:
-[https://github.com/your-username/HireHub](https://github.com/Aniruddhsinh-r/Hirehub)
+[https://github.com/Aniruddhsinh/HireHub](https://github.com/Aniruddhsinh-r/Hirehub)
