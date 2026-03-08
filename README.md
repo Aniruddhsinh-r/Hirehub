@@ -63,7 +63,7 @@ Make sure the following tools are installed on your system:
 
 * Node.js (Latest version recommended)
 * MongoDB Atlas account or local MongoDB server
-* Git
+* Cloudinary account for image storage
 
 ---
 
