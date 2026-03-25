@@ -1,4 +1,4 @@
-# HireHub – Job Portal App with MERN Stack
+# HireHub – Job Portal MERN Stack (Under Development)
 
 A comprehensive **Job Portal Web Application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 This platform allows job seekers to explore job opportunities and apply for positions, while employers can post and manage job listings efficiently.
