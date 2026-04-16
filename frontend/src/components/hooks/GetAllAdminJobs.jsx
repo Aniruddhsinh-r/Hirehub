@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import { JOB_API_ENDPOINT } from '../../utils/constant'
 import { useDispatch } from 'react-redux'
 import { setAllAdminJobs } from '../../redux/JobSlice'
+import { JOB_API_ENDPOINT } from '../../utils/constant'
 
 const GetAllAdminJobs = () => {
   const dispatch = useDispatch()

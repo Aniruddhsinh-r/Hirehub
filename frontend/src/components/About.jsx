@@ -33,7 +33,7 @@ export default function AboutUsPage() {
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       <Navbar />
       
-      <section className="px-6 md:px-16 py-20 text-center">
+      <section className="px-6 md:px-16 py-12 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function AboutUsPage() {
         <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">We are building a modern job and career platform focused on connecting talented people with the right opportunities. Our mission is to make hiring simple, fast and transparent for everyone.</p>
       </section>
 
-      <section className="px-6 md:px-16 py-16">
+      <section className="px-6 md:px-16 py-12">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl shadow-md p-8 text-center hover:shadow-xl transition">
             <Globe className="mx-auto p-2 rounded-xl mb-4 bg-purple-100 text-purple-600" size={60} />

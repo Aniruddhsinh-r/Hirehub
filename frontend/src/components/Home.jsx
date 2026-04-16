@@ -18,7 +18,6 @@ const Home = () => {
     navigate("/admin");
   }
 }, [user]);
-  
   return (
     <div className='bg-linear-to-b from-gray-50 to-white'>
         <Navbar/>

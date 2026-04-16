@@ -25,6 +25,8 @@ import SavedJobsPage from './components/SavedJobs.jsx'
 import AdminApplications from './components/admin/AdminApplications.jsx'
 import Email from './components/admin/Email.jsx'
 import ProtectRoute from './components/admin/ProtectRoute.jsx'
+import AppliedJob from './components/AppliedJob.jsx'
+import Messages from './components/Messages.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -84,6 +86,15 @@ function App() {
       errorElement: <></>
     },
     {
+      path: '/AppliedJobs',
+      element: <AppliedJob />,
+      errorElement: <></>
+    },
+    {
+      path: 'messages/:id',
+      element: <Messages />,
+    },
+    { 
       path: '/admin',
       element: <ProtectRoute><Dashboard /></ProtectRoute>,
       children: [
@@ -122,7 +133,7 @@ function App() {
         {
           path: 'email/:id',
           element: <Email />,
-        }
+        },
       ]
     }
   ])

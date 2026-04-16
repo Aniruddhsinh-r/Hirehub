@@ -1,7 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import authSlice from './authSlice';
 import jobSlice from "./JobSlice";
-import { createRoot } from 'react-dom/client'
+import chatReducer from './chatSlice'
+
 import {
     persistStore,
     persistReducer,
@@ -12,6 +13,7 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist'
+
 import storage from 'redux-persist/lib/storage'
 import companySlice from './companySlice'
 import applicationReducer from './applicationSlice';
@@ -26,7 +28,8 @@ const rootReducer = combineReducers({
     auth:authSlice,
     job:jobSlice,
     company:companySlice,
-    application:applicationReducer
+    application:applicationReducer,
+    chat: chatReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

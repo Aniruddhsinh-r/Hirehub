@@ -5,6 +5,7 @@ import { useState } from 'react'
 import UserProfileDialog from './UserProfileDialog'
 import { useSelector } from 'react-redux'
 import GetAppliedjob from './hooks/GetAppliedjob'
+import Footer from './Footer'
 
 const Profile = () => {
     // const skills = user?.Profile?.skills
@@ -56,6 +57,7 @@ const Profile = () => {
                 <AppliedJob/>
             </div>
             <UserProfileDialog open={open} setopen={setopen}/>
+            <Footer/>
         </div>
     )
 }

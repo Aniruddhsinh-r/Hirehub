@@ -142,8 +142,8 @@ const Signin = () => {
                             <div className='items-center space-y-0.5'>
                                 <div className='items-center gap-4 w-full max-w-md'>
                                     <label htmlFor="Roal" className="font-medium">Roal :</label>
-                                    <label htmlFor="Jookseeker" className="ml-3 font-medium"><input type="radio" value="jobseeker" {...register("role", {required:"Please select Role"})} /> Joobseeker</label>
-                                    <label htmlFor="Recruiter" className="ml-3 font-medium"><input type="radio" value="recruiter" {...register("role", {required:"Please select Role"})} /> Recruiter</label>
+                                    <label htmlFor="jobseeker" className="ml-3 font-medium"><input id='jobseeker' type="radio" value="jobseeker" {...register("role", {required:"Please select Role"})} /> Joobseeker</label>
+                                    <label htmlFor="recruiter" className="ml-3 font-medium"><input id='recruiter' type="radio" value="recruiter" {...register("role", {required:"Please select Role"})} /> Recruiter</label>
                                 </div>
                                 <div className='red'>{errors.role?.message}</div>
                             </div>
@@ -178,8 +178,8 @@ const Signin = () => {
                             <div className='gap-3 my-8'>
                                 <div className='gap-4 w-full max-w-md'>
                                     <label htmlFor="Roal" className="font-medium">Roal :</label>
-                                    <label htmlFor="Jookseeker" className="ml-3 font-medium"><input type="radio" value="jobseeker" {...loginForm.register("Loginrole", {required:"Please select Role"})}/> Joobseeker</label>
-                                    <label htmlFor="Recruiter" className="ml-3 font-medium"><input type="radio" value="recruiter" {...loginForm.register("Loginrole", {required:"Please select Role"})} /> Recruiter</label>
+                                    <label htmlFor="login-jobseeker" className="ml-3 font-medium"><input id='login-jobseeker' type="radio" value="jobseeker" {...loginForm.register("Loginrole", {required:"Please select Role"})}/> Joobseeker</label>
+                                    <label htmlFor="login-recruiter" className="ml-3 font-medium"><input id='login-recruiter' type="radio" value="recruiter" {...loginForm.register("Loginrole", {required:"Please select Role"})} /> Recruiter</label>
                                 </div>
                                 <div className='red'>{loginForm.formState.errors.Loginrole?.message}</div>
                             </div>

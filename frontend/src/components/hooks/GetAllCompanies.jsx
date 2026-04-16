@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import { COMPANY_API_ENDPOINT } from '../../utils/constant'
 import { useDispatch } from 'react-redux'
 import { setCompanies } from '../../redux/companySlice'
+import { COMPANY_API_ENDPOINT } from '../../utils/constant'
 
 const GetAllCompanies = () => {
   const dispatch = useDispatch()

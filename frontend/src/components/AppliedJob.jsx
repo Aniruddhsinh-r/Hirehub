@@ -1,8 +1,10 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import GetAppliedjob from './hooks/GetAppliedjob'
+import Navbar from './Navbar'
 
 const AppliedJob = () => {
-    const {allAppliedJobs}=useSelector(store => store.job)
+    GetAppliedjob();  // triggers the fetch on mount
+    const { allAppliedJobs } = useSelector(store => store.job)
     return (
         <div>
             <div className="p-4 md:p-8 flex justify-center">

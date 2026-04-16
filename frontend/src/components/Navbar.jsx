@@ -74,7 +74,7 @@ const Navbar = () => {
                     <button onClick={() => setMobileMenu(!mobileMenu)} className="flex flex-col gap-1.5">
                         <span className={`h-0.5 w-6 bg-black transition ${mobileMenu ? 'rotate-45 translate-y-2' : ''}`}></span>
                         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-                        
+
                         <span className={`h-0.5 w-6 bg-black transition ${mobileMenu ? 'opacity-0' : ''}`}></span>
                         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
                         <span className={`h-0.5 w-6 bg-black transition ${mobileMenu ? '-rotate-45 -translate-y-2' : ''}`}></span>
@@ -85,11 +85,20 @@ const Navbar = () => {
                 <div className='relative hidden md:block'>
                     {user ? (
                         <div className='flex items-center'>
-                            {user.role !== "recruiter" && <Link to="/SavedJob" className="relative group py-1 overflow-hidden mx-7 text-xl">
-                                <i class="fa-solid fa-bookmark"></i>
-                                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-red-600 transition-all duration-300 ease-out group-hover:w-full"></span>
-                            </Link>}
-                            
+                            {user.role !== "recruiter" && (
+                                <div className="flex items-center gap-6 mx-7 text-xl">
+                                    <Link to="/messages/:id" className="relative group">
+                                        <i className="fa-solid fa-message"></i>
+                                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                                    </Link>
+                                    
+                                    <Link to="/SavedJob" className="relative group">
+                                        <i className="fa-solid fa-bookmark"></i>
+                                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
+                                    </Link>
+                                </div>
+                            )}
+
                             <img src={user?.profile?.profilePhoto} alt="ProfilrPic" className="w-12 h-12 rounded-full bg-gray-500 flex items-center justify-center text-white cursor-pointer hover:ring-2 hover:ring-red-500" onClick={() => { setProfile(!Profile) }} />
                         </div>
                     ) : !user && (
